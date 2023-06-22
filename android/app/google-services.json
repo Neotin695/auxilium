@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "662186870563",
+    "project_id": "auxillium-79120",
+    "storage_bucket": "auxillium-79120.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662186870563:android:13c817e38f96219e472e96",
+        "android_client_info": {
+          "package_name": "modernacademy.auxillium.support"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "662186870563-e0tls2cr2q4v27hiqkh4o4rk2gp9m1ti.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChAKRxKbaJouHR2b-jPEa_zzLpNccyw88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "662186870563-e0tls2cr2q4v27hiqkh4o4rk2gp9m1ti.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
