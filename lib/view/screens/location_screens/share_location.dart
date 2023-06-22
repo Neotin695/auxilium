@@ -21,9 +21,10 @@ class _ShareScreenState extends State<ShareScreen> {
   final loc.Location location = loc.Location();
   late GoogleMapController mapController;
   bool added = false;
+  late LocSerivces locSerivces;
   @override
   void initState() {
-    LocSerivces().fetchCurrentLocation(PreferencesHelper.instance.getUser()!);
+    locSerivces = LocSerivces();
     super.initState();
   }
 
@@ -88,7 +89,7 @@ class _ShareScreenState extends State<ShareScreen> {
                           ])),
                       child: IconButton(
                           onPressed: () async {
-                            await LocSerivces().listenToLocation(
+                            await locSerivces.listenToLocation(
                                 PreferencesHelper.instance.getUser()!);
                           },
                           icon: const Icon(
@@ -112,7 +113,7 @@ class _ShareScreenState extends State<ShareScreen> {
                           ])),
                       child: IconButton(
                           onPressed: () async {
-                            await LocSerivces().fetchCurrentLocation(
+                            await locSerivces.fetchCurrentLocation(
                                 PreferencesHelper.instance.getUser()!);
                           },
                           icon: const Icon(
@@ -136,7 +137,7 @@ class _ShareScreenState extends State<ShareScreen> {
                           ])),
                       child: IconButton(
                           onPressed: () {
-                            LocSerivces().stopListenToLocation(
+                            locSerivces.stopListenToLocation(
                                 PreferencesHelper.instance.getUser()!);
                           },
                           icon: const Icon(
