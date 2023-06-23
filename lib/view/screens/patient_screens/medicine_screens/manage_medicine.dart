@@ -442,8 +442,8 @@ class _ManageMedicineState extends State<ManageMedicine> {
           if (result == true) {
             await NotificationSerivce.instance().showNotification(
                 1,
-                'title',
-                'body',
+                nameController.text.trim(),
+                'Frequency: ${frequencyController.text}\nDosage: ${dosageController.text}',
                 DateTime(
                     DateTime.now().year,
                     DateTime.now().month,
