@@ -25,10 +25,10 @@ class AdminHome extends StatelessWidget {
             ),
             borderRadius: AppStyle.roundCorners,
           ),
-          child: Column(
+          child: const Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               SizedBox(
                 height: 35,
               ),
@@ -49,7 +49,100 @@ class AdminHome extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Container(
+            width: double.infinity,
+            height: 80,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                gradient: const LinearGradient(
+                    colors: [Colors.teal, Colors.indigoAccent, Colors.indigo])),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const ManageMedicine()));
+                  },
+                  child: const Text(
+                    "Manage Medicine",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      // fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ),
+                IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const ManageMedicine()));
+                    },
+                    icon: const Icon(
+                      Icons.arrow_forward_ios_sharp,
+                      color: Colors.white,
+                      size: 25,
+                    ))
+              ],
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Container(
+            width: double.infinity,
+            height: 80,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                gradient: const LinearGradient(
+                    colors: [Colors.teal, Colors.indigoAccent, Colors.indigo])),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const CheckMedicine(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    "Check Medicine",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      // fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const CheckMedicine()));
+                  },
+                  icon: const Icon(
+                    Icons.arrow_forward_ios_sharp,
+                    color: Colors.white,
+                    size: 25,
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
         Padding(
           padding: const EdgeInsets.all(20.0),
           child: Container(
@@ -66,91 +159,9 @@ class AdminHome extends StatelessWidget {
                 TextButton(
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => ManageMedicine()));
+                        MaterialPageRoute(builder: (_) => const ShareScreen()));
                   },
-                  child: Text(
-                    "Manage Medicine",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      // fontWeight: FontWeight.bold
-                    ),
-                  ),
-                ),
-                IconButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => ManageMedicine()));
-                    },
-                    icon: Icon(
-                      Icons.arrow_forward_ios_sharp,
-                      color: Colors.white,
-                      size: 25,
-                    ))
-              ],
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Container(
-            width: double.infinity,
-            height: 80,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                gradient: LinearGradient(
-                    colors: [Colors.teal, Colors.indigoAccent, Colors.indigo])),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => CheckMedicine()));
-                  },
-                  child: Text(
-                    "Check Medicine",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      // fontWeight: FontWeight.bold
-                    ),
-                  ),
-                ),
-                IconButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => CheckMedicine()));
-                    },
-                    icon: Icon(
-                      Icons.arrow_forward_ios_sharp,
-                      color: Colors.white,
-                      size: 25,
-                    ))
-              ],
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Container(
-            width: double.infinity,
-            height: 80,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                gradient: LinearGradient(
-                    colors: [Colors.teal, Colors.indigoAccent, Colors.indigo])),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) =>const ShareScreen()));
-                  },
-                  child:const Text(
+                  child: const Text(
                     "Check Location",
                     style: TextStyle(
                       color: Colors.white,
@@ -161,10 +172,12 @@ class AdminHome extends StatelessWidget {
                 ),
                 IconButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (_) =>const ShareScreen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const ShareScreen()));
                     },
-                    icon:const Icon(
+                    icon: const Icon(
                       Icons.arrow_forward_ios_sharp,
                       color: Colors.white,
                       size: 25,

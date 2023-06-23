@@ -45,7 +45,7 @@ class LocSerivces {
       _locationSubscription = null;
     }).listen((event) async {
       listening = true;
-      await _db.collection('location').doc(user.idDoc).set(
+      await _db.collection('location').doc(user.idDoc).update(
             LocationModel(
               latitude: event.latitude!,
               longitude: event.longitude!,

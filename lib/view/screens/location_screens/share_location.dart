@@ -17,7 +17,6 @@ class ShareScreen extends StatefulWidget {
 }
 
 class _ShareScreenState extends State<ShareScreen> {
-  Position? position;
   final loc.Location location = loc.Location();
   late GoogleMapController mapController;
   bool added = false;
