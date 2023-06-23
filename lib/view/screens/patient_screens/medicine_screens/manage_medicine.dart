@@ -9,7 +9,6 @@ enum Repeat {
   daily,
   monthly,
   weekly,
-  custom,
 }
 
 class ManageMedicine extends StatefulWidget {
@@ -33,14 +32,12 @@ class _ManageMedicineState extends State<ManageMedicine> {
         .collection('medicine')
         .get()
         .then((value) {
-      value.docs.forEach((element) {
-        print(element['Medicine Name']);
+      for (var element in value.docs) {
         medicineModel.add(MedicineModel.fromJson(element.data()));
         setState(() {
           flag = true;
         });
-        print(medicineModel[0].medicineName);
-      });
+      }
     }).catchError((onError) {});
   }
 
@@ -441,17 +438,19 @@ class _ManageMedicineState extends State<ManageMedicine> {
           );
           if (result == true) {
             await NotificationSerivce.instance().showNotification(
-                1,
-                nameController.text.trim(),
-                'Frequency: ${frequencyController.text}\nDosage: ${dosageController.text}',
-                DateTime(
-                    DateTime.now().year,
-                    DateTime.now().month,
-                    DateTime.now().day,
-                    selectedTime.hour,
-                    selectedTime.minute,
-                    DateTime.now().second),
-                Repeat.daily);
+              1,
+              nameController.text.trim(),
+              'Frequency: ${frequencyController.text}\nDosage: ${dosageController.text}',
+              DateTime(
+                DateTime.now().year,
+                DateTime.now().month,
+                DateTime.now().day,
+                selectedTime.hour,
+                selectedTime.minute,
+                DateTime.now().second,
+              ),
+              Repeat.daily,
+            );
           }
         },
         backgroundColor: Colors.indigo,
